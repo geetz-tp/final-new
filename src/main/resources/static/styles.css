@@ -1,0 +1,190 @@
+:root {
+  --heart-color: #ffc1cc; /* Pink nude shade */
+  --heart-border: #ff9aae;
+  --heart-text-color: #ff0066;
+  --letter-bg: url('/images/photopage2.jpg');
+  --heart-animation-color: #ff5e78;
+}
+
+#background-image {
+  background: url('/images/photopage1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+/* Heart Container */
+#heart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  cursor: pointer;
+  animation: moveHeart 4s infinite alternate ease-in-out;
+}
+@keyframes moveHeart {
+  0%, 100% {
+      transform: translateY(0px, 0px);
+  }
+  25% {
+      transform: translate(10px, -15px);
+  }
+  50% {
+      transform: translate(-15px, 15px);
+  }
+  75% {
+      transform: translate(20px, -10px);
+  }
+}
+#heart {
+  position: relative;
+  width: 20vw; /* Responsive size */
+  height: 20vw; /* Responsive size */
+  max-width: 250px; /* Limit size for larger screens */
+  max-height: 250px; /* Limit size for larger screens */
+  background-color: var(--heart-color);
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  box-shadow: 0 0 20px rgba(255, 0, 102, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#heart:before {
+  top: -6vw; /* Adjust positioning */
+  left: 3vw;
+}
+
+#heart:after {
+  top: 3vw;
+  left: -6vw;
+}
+#heart:before,
+#heart:after {
+    content: '';
+    position: absolute;
+    width: 12vw; /* Adjust for responsive circular shapes */
+    height: 12vw; /* Adjust for responsive circular shapes */
+    max-width: 130px; /* Limit size for larger screens */
+    max-height: 130px;
+    background-color: var(--heart-color);
+    border-radius: 50%;
+} 
+#heart-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  max-font-size: 1.3rem;
+  color: var(--heart-text-color);
+  text-align: center;
+  transform: rotate(45deg); /* Rotate text to match the heart */
+  width: 90%;
+  line-height: 1.5rem;
+}
+#letter {
+  position: absolute;
+  width: 15vw; /* Responsive size */
+  height: 20vw; /* Responsive size */
+  max-width: 150px; /* Limit size for larger screens */
+  max-height: 200px;
+  background: var(--letter-bg) no-repeat center center;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(0.5) translate(-50%, 50%);
+  top: 50%;
+  left: 50%;
+  transition: all 1.5s ease-in-out;
+  z-index: 4;
+}
+
+#letter.zoom-out {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(15);
+}
+
+/* Floating Hearts */
+.heart {
+  position: absolute;
+  font-size: 3vw;
+  color: var(--heart-animation-color);
+  animation: floatHearts 5s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatHearts {
+  0% {
+      transform: translateY(100vh) scale(0.8);
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-100vh) scale(1.2);
+      opacity: 0;
+  }
+}
+/* 
+#hearts-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+} */
+/* For Tablets (768px and below) */
+@media (max-width: 768px) {
+  #heart {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  #heart:before, #heart:after {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  #heart-message {
+    font-size: 4vw;
+  }
+
+  #letter {
+    width: 25vw;
+    height: 30vw;
+  }
+
+  .heart {
+    font-size: 4vw;
+  }
+}
+
+/* For Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  #heart {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  #heart:before, #heart:after {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  #heart-message {
+    font-size: 5vw;
+  }
+
+  #letter {
+    width: 30vw;
+    height: 40vw;
+  }
+
+  .heart {
+    font-size: 5vw;
+  }
+}

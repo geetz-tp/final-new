@@ -1,0 +1,66 @@
+/* Fullscreen Blurred Background */
+.blurred-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/photopage2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(3px); /* Apply blur to the background only */
+    z-index: -1; /* Place it behind other elements */
+}
+
+/* Typing Animation */
+.animated-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #f3f3f3;
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    position: relative;
+    z-index: 1; /* Ensure text is above the blurred background */
+}
+
+/* Angel Image for Navigation */
+.angel-image {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    animation: floatAngel 3s infinite ease-in-out;
+    z-index: 1; /* Keep above the blurred background */
+}
+
+@keyframes floatAngel {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .animated-text {
+        font-size: 1.5rem;
+    }
+
+    .angel-image {
+        width: 60px; /* Reduce angel size */
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-text {
+        font-size: 1.2rem;
+        width: 90%; /* Reduce text width */
+    }
+
+    .angel-image {
+        width: 50px; /* Further reduce angel size */
+    }
+}

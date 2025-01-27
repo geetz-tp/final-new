@@ -1,0 +1,158 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day ❤️</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Happy Valentine's Day, My Love! 💖</h1>
+    <div class="shayari">
+        <p id="quote"></p>
+    </div>
+    <div class="gallery">
+        <img src="/images/photo.jpg" alt="Memory 1">
+        <img src="/images/download.jpg" alt="Memory 2">
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day ❤️</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    
+    <div id="blurred-bg"></div>
+
+    
+    <div id="hearts-container"></div>
+
+    <div class="gift-box" onclick="openGift()">
+        <div class="bow"></div>
+        <div class="ribbon-horizontal"></div>
+        <div class="ribbon-vertical"></div>
+        <div class="lid"></div>
+        <div class="box"></div>
+    </div>
+    
+    
+    <div class="letter" id="letter"></div>
+    <div id="reader" style="width: 300px;"></div>
+    <p id="scanned-result">Scanned Result: </p>
+
+    <script>
+        const html5QrCode = new Html5Qrcode("reader");
+
+        function onScanSuccess(decodedText) {
+            document.getElementById("scanned-result").innerText = "Scanned Result: " + decodedText;
+            html5QrCode.stop();
+        }
+
+        function onScanFailure(error) {
+            console.warn(`QR code scan error: ${error}`);
+        }
+
+        html5QrCode.start(
+            { facingMode: "environment" },
+            {
+                fps: 10,
+                qrbox: { width: 250, height: 250 },
+            },
+            onScanSuccess,
+            onScanFailure
+        );
+    </script>
+    <script src="/app.js"></script>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Valentine's Day Surprise</title>
+     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
+ </head>
+ <body>
+     <!-- Blurred Background -->
+     <div id="background-image"></div>
+        <!-- Heart with Message -->
+    <div id="heart-container">
+        <div id="heart">
+            <div id="heart-message">Happy Valentine's Day</div>
+        </div>
+    </div>
+
+    <!-- Letter Element -->
+    <div id="letter"></div>
+
+    <!-- Floating Hearts -->
+    <div id="hearts-container"></div>
+
+    <script src="app.js"></script>
+     <!-- <script>
+         // Add click event to the gift box
+         const giftBox = document.getElementById('gift-box');
+         const letter = document.getElementById('letter');
+         giftBox.addEventListener('click', () => {
+             // Open the gift box
+             giftBox.classList.add('open');
+             
+             // Delay and show the letter zoom-out animation
+             setTimeout(() => {
+                 letter.classList.add('zoom-out');
+                 setTimeout(() => {
+                     window.location.href = "next-page.html"; // Navigate to the next page
+                 }, 1500); // Wait for zoom-out animation to complete
+             }, 1000); // Delay before showing the letter
+         });
+ 
+         // Floating hearts animation
+         const heartsContainer = document.getElementById('hearts-container');
+         const heartEmojis = ["❤️", "💖", "💕", "💞", "💘", "❣️", "💓"];
+         setInterval(() => {
+             const heart = document.createElement('div');
+             heart.className = 'heart';
+             heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+             heart.style.left = Math.random() * 100 + 'vw';
+             heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+             heartsContainer.appendChild(heart);
+             setTimeout(() => heart.remove(), 5000);
+         }, 500);
+     </script> -->
+ </body>
+ </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="/audio/page1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- <button onclick="toggleMusic()">Toggle Music</button>
+
+    <script>
+        const music = document.getElementById('background-music');
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script> -->
+</body>
+</html>
