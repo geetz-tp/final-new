@@ -22,7 +22,7 @@ function handleHeartClick() {
 
     // Redirect to the next page after animation
     setTimeout(() => {
-        window.location.href = '/next-page.html';
+        window.location.href = 'next-page.html';
     }, 2000);
 }
 
