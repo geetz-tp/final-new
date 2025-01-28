@@ -132,8 +132,8 @@
 
     /* Prompt size adjustments for mobile */
     #prompt {
-        width: 250px;
-        height: 200px;
+        width: 300px;
+        height: 250px;
     }
 
     #prompt-heading {
