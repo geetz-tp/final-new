@@ -26,7 +26,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('images/photopage4.jpg') no-repeat center center fixed;
+    background: url('../images/photopage4.jpg') no-repeat center center fixed;
     background-size: cover;
     filter: blur(5px); /* Adjust blur level */
     z-index: -1; /* Keep it behind the content */
@@ -133,4 +133,94 @@ body::before {
 .flap > .heart{
     transform: rotate(90deg);
     transition-delay: 0.4s;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container > .envelope-wrapper > .envelope {
+        width: 220px;
+        height: 170px;
+    }
+    .container > .envelope-wrapper > .envelope::before {
+        border-top: 100px solid var(--envelope-tab);
+        border-right: 110px solid transparent;
+        border-left: 110px solid transparent;
+    }
+    .container > .envelope-wrapper > .envelope::after {
+        border-top: 100px solid transparent;
+        border-left: 110px solid var(--envelope-cover);
+        border-right: 110px solid var(--envelope-cover);
+        border-bottom: 80px solid var(--envelope-cover);
+    }
+    .letter {
+        right: 15%;
+        bottom: 0;
+        width: 50%;
+        height: 70%;
+        padding: 15px 8px;
+        font-size: 8px;
+    }
+    .letter > .text {
+        font-size: 9px;
+    }
+    .letter-image {
+        margin-top: 15px;
+    }
+    .heart {
+        width: 12px;
+        height: 12px;
+    }
+    .heart::before,
+    .heart::after {
+        width: 12px;
+        height: 12px;
+    }
+    .heart::before {
+        top: -6px;
+    }
+    .heart::after {
+        right: 6px;
+    }
+}
+
+/* Very Small Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .container > .envelope-wrapper > .envelope {
+        width: 180px;
+        height: 140px;
+    }
+    .container > .envelope-wrapper > .envelope::before {
+        border-top: 80px solid var(--envelope-tab);
+        border-right: 90px solid transparent;
+        border-left: 90px solid transparent;
+    }
+    .container > .envelope-wrapper > .envelope::after {
+        border-top: 80px solid transparent;
+        border-left: 90px solid var(--envelope-cover);
+        border-right: 90px solid var(--envelope-cover);
+        border-bottom: 60px solid var(--envelope-cover);
+    }
+    .letter {
+        right: 10%;
+        width: 45%;
+        height: 60%;
+        padding: 10px 6px;
+    }
+    .letter > .text {
+        font-size: 8px;
+    }
+    .heart {
+        width: 10px;
+        height: 10px;
+    }
+    .heart::before,
+    .heart::after {
+        width: 10px;
+        height: 10px;
+    }
+    .heart::before {
+        top: -5px;
+    }
+    .heart::after {
+        right: 5px;
+    }
 }
