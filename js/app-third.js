@@ -59,7 +59,7 @@ function zoomHeart() {
 
     // Navigate to the fourth page after the animation
     setTimeout(() => {
-        window.location.href = '/fourth-page.html';
+        window.location.href = 'fourth-page.html';
     }, 1000);
 }
 function navigateToFourthPage() {
@@ -68,6 +68,6 @@ function navigateToFourthPage() {
     body.style.transition = 'transform 1s ease-in-out';
 
     setTimeout(() => {
-        window.location.href = '/fourth-page.html';
+        window.location.href = 'fourth-page.html';
     }, 1000);
 }
