@@ -2,12 +2,12 @@
   --heart-color: #ffc1cc; /* Pink nude shade */
   --heart-border: #ff9aae;
   --heart-text-color: #ff0066;
-  --letter-bg: url('/images/photopage2.jpg');
+  --letter-bg: url('../images/photopage2.jpg');
   --heart-animation-color: #ff5e78;
 }
 
 #background-image {
-  background: url('/images/photopage1.jpg') no-repeat center center fixed;
+  background: url('../images/photopage1.jpg') no-repeat center center fixed;
   background-size: cover;
   position: fixed;
   top: 0;
