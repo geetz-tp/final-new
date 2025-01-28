@@ -6,7 +6,7 @@
   --heart-animation-color: #ff5e78;
 }
 
-#background-image {
+.background-image {
   background: url('../images/photopage1.jpg') no-repeat center center fixed;
   background-size: cover;
   position: fixed;
