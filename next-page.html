@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <link rel="stylesheet" href="css/styles-next.css">
+</head>
+<body>
+    <!-- Blurred Background -->
+    <div class="blurred-background"></div>
+
+    <!-- Typing Animation for Text -->
+    <div class="animated-text">
+        <p id="sentence"></p>
+    </div>
+
+    <!-- Angel Image for Navigation -->
+    <div class="navigate-to-third-page" onclick="navigateToThirdPage()">
+        <img src="/images/angels.jpg" alt="Angel" class="angel-image">
+    </div>
+
+    <script>
+        const text = `
+        तू क्या ही जानता है मेरे बारे में  
+       तू अक्सर मेरे ख्यालों में इश्क़ बनकर बैठा रहता है  
+            मैं जितना तुझसे सोचती हूँ शायद उसका 
+                आधा भी तुझे बता नहीं पाती  
+           क्योंकि इश्क़ मेरा है तू बस मुझे करने दे  
+    अब तुम ज़िद समझो या हक़ पर तुम्हें इतना चाहना है  
+            जितना मेरी ख्वाहिश थी कभी कि 
+                कोई मुझे इतना चाहे...
+        `;
+
+        let index = 0;
+
+        function typeSentence() {
+            const sentenceElement = document.getElementById("sentence");
+            if (index < text.length) {
+                sentenceElement.innerHTML += text.charAt(index) === '\n' ? '<br>' : text.charAt(index);
+                index++;
+                setTimeout(typeSentence, 50);
+            }
+        }
+
+        function navigateToThirdPage() {
+            window.location.href = '/third-page.html';
+        }
+
+        // Start typing animation
+        window.onload = typeSentence;
+    </script>
+</body>
+</html>
+<!-- "तू क्या ही जानता है मेरे बारे में  "
+"       तू अक्सर मेरे ख्यालों में इश्क़ बनकर बैठा रहता है  "
+"            मैं जितना तुझसे सोचती हूँ शायद उसका "
+"                आधा भी तुझे बता नहीं पाती  "
+"           क्योंकि इश्क़ मेरा है तू बस मुझे करने दे  "
+"    अब तुम ज़िद समझो या हक़ पर तुम्हें इतना चाहना है  "
+"            जितना मेरी ख्वाहिश थी कभी कि "
+                "कोई मुझे इतना चाहे..."; -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="/audio/page2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- <button onclick="toggleMusic()">Toggle Music</button>
+
+    <script>
+        const music = document.getElementById('background-music');
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script> -->
+</body>
+</html>
