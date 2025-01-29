@@ -28,12 +28,19 @@ function handleHeartClick() {
 
 // Add Click Event to the Heart
 document.getElementById('heart-container').addEventListener('click', handleHeartClick);
-document.addEventListener('DOMContentLoaded', function() {
-    const audio = new Audio('audio/page1.mp3');
+window.onload = function() {
+    const audio = document.createElement("audio");
+    audio.src = "audio/page1.mp3";
+    audio.loop = true;
 
-    // Trick browser by delaying autoplay slightly
-    setTimeout(() => {
-        audio.loop = true;
+    function playAudio() {
         audio.play().catch(error => console.log("Autoplay blocked:", error));
-    }, 1000); // 1-second delay
-});
+        document.removeEventListener("click", playAudio);
+        document.removeEventListener("scroll", playAudio);
+    }
+
+    document.body.appendChild(audio);
+    document.addEventListener("click", playAudio);
+    document.addEventListener("scroll", playAudio);
+};
+
