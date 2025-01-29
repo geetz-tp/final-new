@@ -28,3 +28,12 @@ function handleHeartClick() {
 
 // Add Click Event to the Heart
 document.getElementById('heart-container').addEventListener('click', handleHeartClick);
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = new Audio('audio/page1.mp3');
+
+    // Trick browser by delaying autoplay slightly
+    setTimeout(() => {
+        audio.loop = true;
+        audio.play().catch(error => console.log("Autoplay blocked:", error));
+    }, 1000); // 1-second delay
+});
