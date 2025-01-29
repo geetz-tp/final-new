@@ -28,20 +28,3 @@ function handleHeartClick() {
 
 // Add Click Event to the Heart
 document.getElementById('heart-container').addEventListener('click', handleHeartClick);
-document.addEventListener("DOMContentLoaded", function () {
-    const audio = document.getElementById("background-audio");
-
-    function playAudio() {
-        audio.muted = false; // Unmute the audio
-        audio.play().catch(error => console.log("Autoplay error:", error)); // Try to play audio
-        document.removeEventListener("click", playAudio); // Remove listener after first tap
-    }
-
-    // Wait for a user interaction
-    document.addEventListener("click", playAudio);
-});
-window.onload = function () {
-    setTimeout(() => {
-        document.dispatchEvent(new Event("click"));
-    }, 1000); // Wait 1 second, then trigger a click event
-};
