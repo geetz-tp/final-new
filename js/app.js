@@ -28,19 +28,20 @@ function handleHeartClick() {
 
 // Add Click Event to the Heart
 document.getElementById('heart-container').addEventListener('click', handleHeartClick);
-window.onload = function() {
-    const audio = document.createElement("audio");
-    audio.src = "audio/page1.mp3";
-    audio.loop = true;
+document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("background-audio");
 
     function playAudio() {
-        audio.play().catch(error => console.log("Autoplay blocked:", error));
-        document.removeEventListener("click", playAudio);
-        document.removeEventListener("scroll", playAudio);
+        audio.muted = false; // Unmute the audio
+        audio.play().catch(error => console.log("Autoplay error:", error)); // Try to play audio
+        document.removeEventListener("click", playAudio); // Remove listener after first tap
     }
 
-    document.body.appendChild(audio);
+    // Wait for a user interaction
     document.addEventListener("click", playAudio);
-    document.addEventListener("scroll", playAudio);
+});
+window.onload = function () {
+    setTimeout(() => {
+        document.dispatchEvent(new Event("click"));
+    }, 1000); // Wait 1 second, then trigger a click event
 };
-
