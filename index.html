@@ -34,15 +34,16 @@
     <title>Page 1</title>
 </head>
 <body>
-<audio id="bg-audio" autoplay muted loop>
+<audio id="bg-audio" loop>
     <source src="audio/page1.mp3" type="audio/mpeg">
 </audio>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        let audio = document.getElementById('bg-audio');
-        audio.muted = false;  // Unmute after page loads
-        audio.play().catch(error => console.log("Autoplay blocked:", error));
+        setTimeout(() => {
+            let audio = document.getElementById('bg-audio');
+            audio.play().catch(error => console.log("Autoplay blocked:", error));
+        }, 500); // Delay of 500ms
     });
 </script>
 </body>
