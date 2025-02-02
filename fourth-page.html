@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,6 +44,110 @@
     <title>Page 1</title>
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="audio/page4.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Scene</title>
+    <link rel="stylesheet" href="css/styles-fourth.css">
+    <style>
+        :root {
+            --cloud-color: rgba(255, 255, 255, 0.9);
+            --text-color: #333;
+            --cloud-size: 10vw; /* Using vw for cloud size */
+            --text-font-size: 4vw; /* Font size based on viewport width */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('images/a_couple_standing_under.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        .cloud {
+            position: absolute;
+            top: 15%;
+            width: var(--cloud-size); /* Responsive cloud size */
+            height: calc(var(--cloud-size) / 2); /* Maintain aspect ratio */
+            background: var(--cloud-color);
+            border-radius: 50%;
+            box-shadow: 30px 10px 20px var(--cloud-color);
+            animation: moveClouds 10s linear infinite;
+        }
+
+        @keyframes moveClouds {
+            from {
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(100vw);
+                opacity: 1;
+            }
+        }
+
+        .text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--text-color);
+            font-size: var(--text-font-size); /* Responsive text size */
+            font-family: Arial, sans-serif;
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Media Queries for better responsiveness on different screen sizes */
+        @media (max-width: 768px) {
+            :root {
+                --text-font-size: 6vw; /* Increase text size on smaller devices */
+                --cloud-size: 15vw; /* Adjust cloud size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --text-font-size: 8vw; /* Even larger text on very small screens */
+                --cloud-size: 20vw; /* Bigger clouds on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud" style="top: 15%; animation-delay: 0s;"></div>
+    <div class="cloud" style="top: 25%; animation-delay: 3s;"></div>
+    <div class="cloud" style="top: 35%; animation-delay: 6s;"></div>
+    
+    <div class="text-container">
+        <p><strong>Sujay</strong></p>
+        <p>
+            Sach kahu toh sare tofe sare lafaz kam pad jate hain tumhare pyaar ke aage phir bhi yeh ek koshish ki hai tumse ye jatane ke hum tumse kitna pyaar krte hai ki... <br>
+            "Jante ho phir bhi anjaan bante ho, iss tarah kyu mujhe pareshan krte ho! Puchte ho mujhe kya pasand hai jawaab khud ho lekin phir bhi mujhse sawaal krte ho...!💖"</p>
+    </div>
+    
     <audio autoplay loop>
         <source src="audio/page4.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
