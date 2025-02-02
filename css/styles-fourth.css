@@ -1,4 +1,4 @@
-:root{
+/* :root{
     --primary:#fff;
     --bg-color: rgb(5, 53, 61);
     --bg-envelope-color:#f5edd1;
@@ -8,7 +8,6 @@
     --txt-color:#444;
     --heart-color: rgb(252, 8, 231);
 }
-/* Fullscreen Letter-Themed Background */
 body {
     margin: 0;
     padding: 0;
@@ -27,10 +26,10 @@ body::before {
     right: 0;
     bottom: 0;
     background: url('../images/a_couple_standing_under.jpg') no-repeat center center fixed;
-/*     background: url('../images/photopage4.jpg') no-repeat center center fixed; */
+    background: url('../images/photopage4.jpg') no-repeat center center fixed; 
     background-size: cover;
-/*     filter: blur(5px); /* Adjust blur level */ */
-    z-index: -1; /* Keep it behind the content */
+    filter: blur(5px);
+    z-index: -1; 
 }
 .container{
     height: 100vh;
@@ -67,7 +66,6 @@ body::before {
     border-left: 150px solid var(--envelope-cover);
     border-right: 150px solid var(--envelope-cover);
     border-bottom: 100px solid var(--envelope-cover);
-    /* bottom: 0; */
 }
 .letter{
     z-index: 0;
@@ -88,10 +86,10 @@ body::before {
     text-align: left;
 }
 .letter-image {
-    max-width: 100%; /* Ensures the image doesn't overflow its container */
-    max-height: 100%; /* Limits the height to fit within the container */
-    object-fit: contain; /* Ensures the image maintains its aspect ratio */
-    margin-top: 20px; /* Adds some space above the image */
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: contain;
+    margin-top: 20px; 
 }
 .heart{
     position: absolute;
@@ -135,7 +133,6 @@ body::before {
     transform: rotate(90deg);
     transition-delay: 0.4s;
 }
-/* Responsive Design */
 @media (max-width: 768px) {
     .container > .envelope-wrapper > .envelope {
         width: 220px;
@@ -183,7 +180,6 @@ body::before {
     }
 }
 
-/* Very Small Devices (max-width: 480px) */
 @media (max-width: 480px) {
     .container > .envelope-wrapper > .envelope {
         width: 180px;
@@ -225,3 +221,4 @@ body::before {
         right: 5px;
     }
 }
+ */
