@@ -28,3 +28,26 @@ function handleHeartClick() {
 
 // Add Click Event to the Heart
 document.getElementById('heart-container').addEventListener('click', handleHeartClick);
+// Background Music Function
+function playBackgroundMusic() {
+    let audio = new Audio("audio/firstpage.mp3"); // Ensure correct path
+    audio.loop = true;
+
+    // Try autoplay
+    let playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            console.log("Autoplay blocked, waiting for user interaction...");
+            document.addEventListener('click', () => {
+                audio.play();
+                console.log("Audio started after user interaction.");
+            }, { once: true }); // Only trigger once
+        });
+    }
+
+    // Save to global scope to prevent garbage collection
+    window.bgAudio = audio;
+}
+
+// Run function on page load
+document.addEventListener("DOMContentLoaded", playBackgroundMusic);
