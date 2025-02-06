@@ -5,7 +5,14 @@
   --letter-bg: url('../images/photopage2.jpg');
   --heart-animation-color: #ff5e78;
 }
-
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background: url('../images/photopage1.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
 .background-image {
   position: fixed;
   top: 0;
@@ -16,6 +23,8 @@
   background-size: cover;
   overflow: hidden;
   z-index: -1;
+  transform: none !important;
+  animation: none !important;
 }
 /* Heart Container */
 #heart-container {
