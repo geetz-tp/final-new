@@ -111,7 +111,7 @@
     <link rel="stylesheet" href="css/styles-fourth.css">
     <style>
         :root {
-            --cloud-color: rgba(255, 255, 255, 0.9);
+            --cloud-color: rgba(255, 255, 255, 0.8);
             --text-color: #fff;
             --cloud-size: 10vw; /* Using vw for cloud size */
             --text-font-size: 4vw; /* Font size based on viewport width */
@@ -160,7 +160,7 @@
             text-align: center;
             color: var(--text-color);
             font-size: var(--text-font-size); /* Responsive text size */
-            font-family: Pacifico, sans-serif;
+            font-family: Dancing Script, cursive;
             opacity: 0;
             animation: fadeIn 5s forwards;
         }
@@ -174,15 +174,17 @@
         /* Media Queries for better responsiveness on different screen sizes */
         @media (max-width: 768px) {
             :root {
-                --text-font-size: 6vw; /* Increase text size on smaller devices */
+                --text-font-size: 3.5vw; /* Increase text size on smaller devices */
                 --cloud-size: 15vw; /* Adjust cloud size */
+                --max-width: 85%;
             }
         }
 
         @media (max-width: 480px) {
             :root {
-                --text-font-size: 8vw; /* Even larger text on very small screens */
+                --text-font-size: 4.5vw; /* Even larger text on very small screens */
                 --cloud-size: 20vw; /* Bigger clouds on very small screens */
+                --max-width: 85%
             }
         }
     </style>
