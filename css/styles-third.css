@@ -9,6 +9,7 @@
     background-size: cover;
     filter: blur(8px);
     z-index: -1;
+    will-change: transform;
 }
 
 /* Emoji Grid */
