@@ -34,27 +34,9 @@
     <title>Page 1</title>
 </head>
 <body>
-<audio id="bg-audio" loop autoplay muted>
-    <source src="audio/page1.mpeg" type="audio/mpeg">
-</audio>
-
-<script>
-   document.addEventListener('DOMContentLoaded', function() {
-    let audio = document.getElementById('bg-audio');
-
-    function playAudio() {
-        audio.muted = false; // Unmute
-        audio.play()
-            .then(() => console.log("Audio playing"))
-            .catch(error => console.log("Autoplay blocked:", error));
-    }
-
-    // Try to play audio on page load
-    playAudio();
-
-    // If blocked, retry when the user interacts
-    document.body.addEventListener('click', playAudio, { once: true });
-});
-</script>
+    <audio autoplay loop>
+        <source src="audio/page1.mpeg" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
