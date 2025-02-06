@@ -39,12 +39,19 @@
 </audio>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(() => {
-            let audio = document.getElementById('bg-audio');
-            audio.play().catch(error => console.log("Autoplay blocked:", error));
-        }, 500); // Delay of 500ms
-    });
+   document.addEventListener('DOMContentLoaded', function() {
+    let audio = document.getElementById('bg-audio');
+
+    // Try playing immediately with a slight delay
+    setTimeout(() => {
+        audio.play().catch(error => console.log("Autoplay blocked:", error));
+    }, 500);
+
+    // Ensure audio starts after user interaction
+    document.body.addEventListener('click', function() {
+        audio.play().catch(error => console.log("Play error:", error));
+    }, { once: true });
+});
 </script>
 </body>
 </html>
