@@ -111,8 +111,8 @@
     <link rel="stylesheet" href="css/styles-fourth.css">
     <style>
         :root {
-            --cloud-color: rgba(255, 255, 255, 0.8);
-            --text-color: #5a3e36;
+            --cloud-color: rgba(255, 255, 255, 0.9);
+            --text-color: #E95B6A;
             --cloud-size: 10vw; /* Using vw for cloud size */
             --text-font-size: 4vw; /* Font size based on viewport width */
         }
@@ -163,6 +163,10 @@
             font-family: Dancing Script, cursive;
             opacity: 0;
             animation: fadeIn 5s forwards;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Added shadow for visibility */
+            background: rgba(255, 255, 255, 0.3); /* Added semi-transparent background */
+            padding: 10px;
+            border-radius: 10px;
         }
 
         @keyframes fadeIn {
