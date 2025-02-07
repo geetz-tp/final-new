@@ -29,25 +29,21 @@ function handleHeartClick() {
 // Add Click Event to the Heart
 document.getElementById('heart-container').addEventListener('click', handleHeartClick);
 // Background Music Function
-function playBackgroundMusic() {
-    let audio = new Audio("audio/ReelAudio-57287.mp3"); // Ensure correct path
-    audio.loop = true;
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("background-music");
+    const playButton = document.getElementById("music-btn");
 
-    // Try autoplay
+    // Try to play audio automatically
     let playPromise = audio.play();
     if (playPromise !== undefined) {
         playPromise.catch(error => {
-            console.log("Autoplay blocked, waiting for user interaction...");
-            document.addEventListener('click', () => {
+            console.log("Autoplay blocked. Waiting for user interaction...");
+            playButton.style.display = "block"; // Show button if autoplay is blocked
+            playButton.addEventListener("click", () => {
                 audio.play();
+                playButton.style.display = "none"; // Hide after play
                 console.log("Audio started after user interaction.");
-            }, { once: true }); // Only trigger once
+            }, { once: true });
         });
     }
-
-    // Save to global scope to prevent garbage collection
-    window.bgAudio = audio;
-}
-
-// Run function on page load
-document.addEventListener("DOMContentLoaded", playBackgroundMusic);
+});
