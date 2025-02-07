@@ -30,7 +30,7 @@ function handleHeartClick() {
 document.getElementById('heart-container').addEventListener('click', handleHeartClick);
 // Background Music Function
 function playBackgroundMusic() {
-    let audio = new Audio("audio/firstpage.mp3"); // Ensure correct path
+    let audio = new Audio("audio/ReelAudio-57287.mp3"); // Ensure correct path
     audio.loop = true;
 
     // Try autoplay
